@@ -3,7 +3,7 @@ GENERAL OVERVIEW ON HOW TO OPTIMIZE YOUR APP:
     * Critical Render Path
     * Optimized Code
     * Progressive Web App
-2. Network Requests: network latency:
+2. Network Requests (latency):
     * Minimize Files
     * Minimize Delivery
 3. Backend (Database):
