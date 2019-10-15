@@ -97,3 +97,41 @@ PROGRESSIVE WEB APPLICATIONS:
 * https://medium.com/@firt/progressive-web-apps-on-ios-are-here-d00430dee3a7 
 * https://www.pwabuilder.com/ (converting web apps into app packages) 
 * https://www.macincloud.com/ (if you do not own a Mac but need xcode) 
+
+
+CDNS (Content Delivery Network): 
+
+- Helps with accelerating any website by caching its files in servers anywhere in the world. Content is served from the nearest server for the fastest possible speeds. (i.e. of popular services: CloudFare, AWS CloudFront, Microsoft Azure CDN)
+- Removes latency due to factors concerning physical distance from the hosting servers (i.e. NY vs Singapore) which would require multiple routers to send files needed before finalizing request. Caching preloads files necessary in servers hosted around the world to speed up this process.
+
+GZIP (GNU zip): 
+
+- One of the best way to optimize performance and simple to implement by compressing files.
+- ``const compression = require('compression')`` + ``app.use(compression())`` to compress files (gzip works with many file types so the client side can reduce file size and increase performance).
+- https://github.com/google/brotli (Google's Brotli is similar to gzip but 20% more efficient compressing files)
+
+DB SCALING: 
+
+- Identify Inefficient Queries: Making requests only for absolutely necessary information and by indexing which helps sort through a number of records on multiple fields (i.e. creating an index on a field that is age of the user table it'll create a new copy of the data structure which holds the field value and a pointer to the record that it relates to).  Indexes allow use to binary searches to increase performance but downsize requires additional space on disk.
+ - Example of creating an index: ``CREATE INDEX idx_name on table_name (column_name);``
+ - Storage is the slowest piece in a relational database.  One bad SQL query can cause a huge delay.
+- Increase Memory: After checking inefficient queries, one way to improve bottlenecks is to improve the hardware that the database on working on.  By increasing the amount information  in memory, you aren't acccesing the disk as often as you increase your speed so you can store more information in memory for a db but only allowed to add a certain amount of db in memory.
+- Vertical Scaling (Redis, Memchached): Information can be cached on Redis to reduce amount of queries being sent to the DB (similar to CDNs but using memory access instead of disk access).
+- Sharding: Simply breaking down the website or parts of data into different pieces (separate databases). Instead of searching through a giant database you can categorize the information into parts to reduce time spent on queries.
+- More Databases: Having multiple db we can have more options and less queries to a single db in order to distribute the load (postgresql has preconfigured or use load balancer to distribute the loads).
+- Database Type: When picking database what characteristics do we need since there are so many ways to store data.
+
+CACHING: 
+
+- Process of storing some data in cache which is temporary storage component area where the data is stored so in the future data can be served faster.
+ - 3 Basic components: CPUs, RAM (random access memory), Hard disk drives.
+  - CPUs: Built with a special onchip memory called 'registers' which usually consists of small amount fast storage. Nowadays have some memory as well instead of doing all the brain work.  Closest and smallest memory storage in computers but also the fastest (i.e of 'registers' would be L0, L1, L3, L4 cache).
+  - RAM: Closer to the CPU not as close as registers (small pieces of memory in CPU) but large enough to hold significant information (short term memory) that the CPU can access.
+  - Hard disk drives: Performance cost becomes cheaper but slower.  Hard disk on the other hand can store long term data even with power shutting down.
+- Server can cache information on browsers (client side), database, memory storage like redis (sessions, database requests). 
+
+Useful Articles relating to Caching:
+
+- https://www.freecodecamp.org/news/the-hidden-components-of-web-caching-970854fe2c49/ (Components of Caching)
+- https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching (Http Caching)
+- https://devcenter.heroku.com/articles/increasing-application-performance-with-http-cache-headers (Increasing Application performance with HTTP Cache Headers)
