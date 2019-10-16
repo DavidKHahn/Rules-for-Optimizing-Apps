@@ -162,9 +162,20 @@
   - RAM: Closer to the CPU not as close as registers (small pieces of memory in CPU) but large enough to hold significant information (short term memory) that the CPU can access.
   - Hard disk drives: Performance cost becomes cheaper but slower.  Hard disk on the other hand can store long term data even with power shutting down.
 - Server can cache information on browsers (client side), database, memory storage like redis (sessions, database requests). 
+- *"Fetching something over the network is both slow and expensive. Large responses require many roundtrips between the client and server, which delays when they are available and when the browser can process them, and also incurs data costs for the visitor. As a result, the ability to cache and reuse previously fetched resources is a critical aspect of optimizing for performance.
+The good news is that every browser ships with an implementation of an HTTP cache. All you need to do is ensure that each server response provides the correct HTTP header directives to instruct the browser on when and for how long the browser can cache the response."* (Source: https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching)
+
 
 **Useful Articles relating to Caching:**
 
 - https://www.freecodecamp.org/news/the-hidden-components-of-web-caching-970854fe2c49/ (Components of Caching)
-- https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching (Http Caching)
 - https://devcenter.heroku.com/articles/increasing-application-performance-with-http-cache-headers (Increasing Application performance with HTTP Cache Headers)
+
+**LOAD BALANCERS:**
+
+ - Way to balance multiple requests at the same time and distribute them to different services.  Used when more and more requests are hitting servers frequently.
+ - Load balancers such as Apache, Nginx are great at serving static files (HTML, CSS, JS).
+ - A SPA can send request to Niginx acts as a reverse proxy which serve files to different servers based on the available bandwidths.
+
+
+
