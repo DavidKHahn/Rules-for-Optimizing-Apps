@@ -176,6 +176,8 @@ The good news is that every browser ships with an implementation of an HTTP cach
  - Way to balance multiple requests at the same time and distribute them to different services.  Used when more and more requests are hitting servers frequently.
  - Load balancers such as Apache, Nginx are great at serving static files (HTML, CSS, JS).
  - A SPA can send request to Niginx acts as a reverse proxy which serve files to different servers based on the available bandwidths.
-
+ - Many hosting platforms nowadays provide load balancers with ease of use by having setups premade or easily configurable (AWS Elastic Load Balancing, Digital Ocean Hosting).
+ - Testing for load balancers: https://www.npmjs.com/package/loadtest, https://www.npmjs.com/package/siege, https://www.npmjs.com/package/artillery, https://github.com/giltene/wrk2).
+  - Loadtest command: ``loadtest -t 5 -c 100 --rps 100 http://localhost:80`` (t: represents time limit, c: represents # of clients created and arriving concurrently to the testing site, rps: represents rate of requests per sec to localhost:80)
 
 
