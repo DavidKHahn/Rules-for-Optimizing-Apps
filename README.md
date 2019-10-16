@@ -24,7 +24,7 @@
    “The traveling deliveryman” (processing distance, caching)
    
    - Browsers have a limit of files able to carry per request (2-6 based on HTTP protocols as well as a size limit for each file)
-   - https://stackoverflow.com/questions/985431/max-parallel-http-connections-in-a-browser (Example and definition)
+   - https://stackoverflow.com/questions/985431/max-parallel-http-connections-in-a-browser  (Example and definition)
 
 **IMAGE OPTIMIZATIONS:**
 
@@ -73,11 +73,11 @@
       * Avoid long running javascript
    
    **Helpful links:**
-   - https://developers.google.com/speed/pagespeed/insights/ (test web pages on mobile or desktop with suggestions for optimizations based on webpage link provided from user)
+   - https://developers.google.com/speed/pagespeed/insights/  (test web pages on mobile or desktop with suggestions for optimizations based on webpage link provided from user)
    - www.webpagetest.org
-   - http://youmightnotneedjquery.com/ (native JS is faster without heavy jQuery library use)
-   - https://css-tricks.com/prefetching-preloading-prebrowsing/ (Pre-fetching, pre-loading, pre-browsing)
-   - https://imagecompressor.com/ (image optimizer)
+   - http://youmightnotneedjquery.com/  (native JS is faster without heavy jQuery library use)
+   - https://css-tricks.com/prefetching-preloading-prebrowsing/  (Pre-fetching, pre-loading, pre-browsing)
+   - https://imagecompressor.com/  (image optimizer)
    
  
 
@@ -106,7 +106,7 @@
  
 **Helpful Links:**
 
- - https://github.com/maicki/why-did-you-update (Use this to tackle when to actually use performance enhancements without overly doing it)
+ - https://github.com/maicki/why-did-you-update  (Use this to tackle when to actually use performance enhancements without overly doing it)
  - https://medium.com/@wereHamster/beware-react-setstate-is-asynchronous-ce87ef1a9cf3  (React setState is asynchronous)
  - https://vasanthk.gitbooks.io/react-bits/patterns/19.async-nature-of-setState.html  (more on Async Nature Of setState())
 
@@ -122,7 +122,7 @@
     
 **Service Worker:** A script (JS file) that runs in background and assists in offline first web application development (assists with Push Notifications and background syncs).
 
-   - https://jakearchibald.github.io/isserviceworkerready/ (Which versions of the browsers have implemented service worker)
+   - https://jakearchibald.github.io/isserviceworkerready/  (Which versions of the browsers have implemented service worker)
    - https://auth0.com/blog/introduction-to-progressive-web-apps-push-notifications-part-3/  (PWA push notifications) 
     
 **Useful Links:**
@@ -182,7 +182,12 @@ The good news is that every browser ships with an implementation of an HTTP cach
  - A SPA can send request to Niginx acts as a reverse proxy which serve files to different servers based on the available bandwidths.
  - Many hosting platforms nowadays provide load balancers with ease of use by having setups premade or easily configurable (AWS Elastic Load Balancing, Digital Ocean Hosting).
  
- - **Testing tools for load balancers:** https://www.npmjs.com/package/loadtest, https://www.npmjs.com/package/siege, https://www.npmjs.com/package/artillery, https://github.com/giltene/wrk2).
+ - **Testing tools for load balancers:** 
+  - loadtest: https://www.npmjs.com/package/loadtest
+  - siege: https://www.npmjs.com/package/siege
+  - artillery: https://www.npmjs.com/package/artillery
+  - Wrk2: https://github.com/giltene/wrk2
+  
   - **Loadtest command (npm loadtest):** ``loadtest -t 5 -c 100 --rps 100 http://localhost:80`` (t: represents time limit, c: represents # of clients created and arriving concurrently to the testing site, rps: represents rate of requests per sec to localhost:80)
   
  **Useful Links:**
