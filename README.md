@@ -166,7 +166,7 @@
 The good news is that every browser ships with an implementation of an HTTP cache. All you need to do is ensure that each server response provides the correct HTTP header directives to instruct the browser on when and for how long the browser can cache the response."* (Source: https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching)
 
 
-**Useful Articles relating to Caching:**
+**Useful Caching Articles:**
 
 - https://www.freecodecamp.org/news/the-hidden-components-of-web-caching-970854fe2c49/ (Components of Caching)
 - https://devcenter.heroku.com/articles/increasing-application-performance-with-http-cache-headers (Increasing Application performance with HTTP Cache Headers)
@@ -179,5 +179,9 @@ The good news is that every browser ships with an implementation of an HTTP cach
  - Many hosting platforms nowadays provide load balancers with ease of use by having setups premade or easily configurable (AWS Elastic Load Balancing, Digital Ocean Hosting).
  - Testing for load balancers: https://www.npmjs.com/package/loadtest, https://www.npmjs.com/package/siege, https://www.npmjs.com/package/artillery, https://github.com/giltene/wrk2).
   - Loadtest command: ``loadtest -t 5 -c 100 --rps 100 http://localhost:80`` (t: represents time limit, c: represents # of clients created and arriving concurrently to the testing site, rps: represents rate of requests per sec to localhost:80)
-
+  
+ **Useful Links:**
+ 
+ - https://nginx.org/en/docs/ (Nginx Documentation)
+ - https://www.linode.com/docs/web-servers/nginx/how-to-configure-nginx/ (How to configure Nginx)
 
