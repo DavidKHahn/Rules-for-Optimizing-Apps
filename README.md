@@ -2,11 +2,11 @@
 
 **We will focus on 3 aspects of an app to optimize performance as much as possible by configuring the front end side, network requests and the backend.**
 
- - 1. Frontend (client-side):
+ - 1. Frontend (Client-side):
        * Critical Render Path
        * Optimized Code
        * Progressive Web App
- - 2. Network Requests (latency):
+ - 2. Network Requests (Latency):
        * Minimize Files
        * Minimize Delivery
  - 3. Backend (Database):
@@ -93,8 +93,8 @@
 **Helpful Links:**
 
  - https://github.com/jamiebuilds/react-loadable
- - https://www.smooth-code.com/open-source/loadable-components/docs/loadable-vs-react-lazy/ (easy to use react component level code splitting)
- - https://developers.google.com/web/fundamentals/performance/optimizing-javascript/tree-shaking/ (Tree Shaking)
+ - https://www.smooth-code.com/open-source/loadable-components/docs/loadable-vs-react-lazy/  (easy to use react component level code splitting)
+ - https://developers.google.com/web/fundamentals/performance/optimizing-javascript/tree-shaking/  (Tree Shaking)
 
 **REACT OPTIMIZATION:**
 
@@ -107,35 +107,37 @@
 **Helpful Links:**
 
  - https://github.com/maicki/why-did-you-update (Use this to tackle when to actually use performance enhancements without overly doing it)
- - https://medium.com/@wereHamster/beware-react-setstate-is-asynchronous-ce87ef1a9cf3 (React setState is asynchronous)
- - https://vasanthk.gitbooks.io/react-bits/patterns/19.async-nature-of-setState.html (Async Nature Of setState())
+ - https://medium.com/@wereHamster/beware-react-setstate-is-asynchronous-ce87ef1a9cf3  (React setState is asynchronous)
+ - https://vasanthk.gitbooks.io/react-bits/patterns/19.async-nature-of-setState.html  (more on Async Nature Of setState())
 
 **PROGRESSIVE WEB APPLICATIONS:**
 
-**HTTPS:** protects information sent through browser to server in encrypted fashion
-    - https://letsencrypt.org/ (free encryption certification service)
-    - https://www.cloudflare.com/ (similar hosting site with encryption)
+**HTTPS:** Safeguards information sent through browser to server in an encrypted fashion.
+   - https://letsencrypt.org/  (free encryption certification service)
+   - https://www.cloudflare.com/  (similar hosting site with encryption)
+    
 **App Manifest:**
-    - Make sure the viewport inside html file is included since this is the file which makes web app responsive across different platforms (source: https://developers.google.com/web/tools/lighthouse/audits/has-viewport-meta-tag)
-    - Manifest.json is where the app's icon, name, color can be modified (favicon/splashscreen generator: https://realfavicongenerator.net/)
+   - Make sure the viewport inside html file is included since this is the file which makes web app responsive across different platforms (**source:** https://developers.google.com/web/tools/lighthouse/audits/has-viewport-meta-tag)
+   - Manifest.json is where the app's icon, name, color can be modified (**favicon/splashscreen generator:** https://realfavicongenerator.net/)
     
 **Service Worker:** A script (JS file) that runs in background and assists in offline first web application development (assists with Push Notifications and background syncs).
-    - https://jakearchibald.github.io/isserviceworkerready/ (Which versions of the browsers have implemented service worker)
-    - https://auth0.com/blog/introduction-to-progressive-web-apps-push-notifications-part-3/ (PWA push notifications) 
+
+   - https://jakearchibald.github.io/isserviceworkerready/ (Which versions of the browsers have implemented service worker)
+   - https://auth0.com/blog/introduction-to-progressive-web-apps-push-notifications-part-3/  (PWA push notifications) 
     
 **Useful Links:**
 
  - http://debuggerdotbreak.judahgabriel.com/2018/04/13/i-built-a-pwa-and-published-it-in-3-app-stores-heres-what-i-learned/
  - https://medium.com/@firt/progressive-web-apps-on-ios-are-here-d00430dee3a7
- - https://www.pwabuilder.com/ (converting web apps into app packages)
- - https://www.macincloud.com/ (if you do not own a Mac but need xcode)
+ - https://www.pwabuilder.com/  (converting web apps into app packages)
+ - https://www.macincloud.com/  (if you do not own a Mac but need xcode)
 
 **BACKEND OPTIMIZATION**
 
 **CDNS (Content Delivery Network):**
 
 - Helps with accelerating any website by caching its files in servers anywhere in the world. Content is served from the nearest server for the fastest possible speeds. (i.e. of popular services: CloudFare, AWS CloudFront, Microsoft Azure CDN)
-- Removes latency due to factors concerning physical distance from the hosting servers (i.e. NY vs Singapore) which would require multiple routers to send files needed before finalizing request. Caching preloads files necessary in servers hosted around the world to speed up this process.
+- Removes latency due to factors concerning physical distance from the hosting servers (i.e. distance from NY to Singapore: 9000+ miles) which would require multiple routers to send files needed before finalizing request. Caching preloads files necessary in servers hosted around the world to speed up this process.
 
 **GZIP (GNU zip):**
 
@@ -162,8 +164,10 @@
   - RAM: Closer to the CPU not as close as registers (small pieces of memory in CPU) but large enough to hold significant information (short term memory) that the CPU can access.
   - Hard disk drives: Performance cost becomes cheaper but slower.  Hard disk on the other hand can store long term data even with power shutting down.
 - Server can cache information on browsers (client side), database, memory storage like redis (sessions, database requests). 
-- *"Fetching something over the network is both slow and expensive. Large responses require many roundtrips between the client and server, which delays when they are available and when the browser can process them, and also incurs data costs for the visitor. As a result, the ability to cache and reuse previously fetched resources is a critical aspect of optimizing for performance.
-The good news is that every browser ships with an implementation of an HTTP cache. All you need to do is ensure that each server response provides the correct HTTP header directives to instruct the browser on when and for how long the browser can cache the response."* (Source: https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching)
+>*"Fetching something over the network is both slow and expensive. Large responses require many roundtrips between the client and server, which delays when they are available and when the browser can process them, and also incurs data costs for the visitor. As a result, the ability to cache and reuse previously fetched resources is a critical aspect of optimizing for performance.
+The good news is that every browser ships with an implementation of an HTTP cache. All you need to do is ensure that each server response provides the correct HTTP header directives to instruct the browser on when and for how long the browser can cache the response."*
+
+(**Source:** https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching)
 
 
 **Useful Caching Articles:**
@@ -177,8 +181,9 @@ The good news is that every browser ships with an implementation of an HTTP cach
  - Load balancers such as Apache, Nginx are great at serving static files (HTML, CSS, JS).
  - A SPA can send request to Niginx acts as a reverse proxy which serve files to different servers based on the available bandwidths.
  - Many hosting platforms nowadays provide load balancers with ease of use by having setups premade or easily configurable (AWS Elastic Load Balancing, Digital Ocean Hosting).
- - Testing for load balancers: https://www.npmjs.com/package/loadtest, https://www.npmjs.com/package/siege, https://www.npmjs.com/package/artillery, https://github.com/giltene/wrk2).
-  - Loadtest command: ``loadtest -t 5 -c 100 --rps 100 http://localhost:80`` (t: represents time limit, c: represents # of clients created and arriving concurrently to the testing site, rps: represents rate of requests per sec to localhost:80)
+ 
+ - **Testing tools for load balancers:** https://www.npmjs.com/package/loadtest, https://www.npmjs.com/package/siege, https://www.npmjs.com/package/artillery, https://github.com/giltene/wrk2).
+  - **Loadtest command (npm loadtest):** ``loadtest -t 5 -c 100 --rps 100 http://localhost:80`` (t: represents time limit, c: represents # of clients created and arriving concurrently to the testing site, rps: represents rate of requests per sec to localhost:80)
   
  **Useful Links:**
  
